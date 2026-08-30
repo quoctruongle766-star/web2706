@@ -1,0 +1,62 @@
+@using Lab02_Controller.Models
+@{
+    ViewData["Title"] = "Danh sách sản phẩm";
+    var categories = ViewBag.Categories as List<Category> ?? new();
+    var products = ViewBag.Products as List<Product> ?? new();
+    int? selectedCategoryId = ViewBag.SelectedCategoryId;
+}
+
+<div class="page-title">
+    <h1>Danh mục &amp; Danh sách sản phẩm</h1>
+    <p>Click vào từng danh mục để lọc các sản phẩm thuộc danh mục đó.</p>
+</div>
+
+<div class="shop-layout">
+    <aside class="sidebar">
+        <h3>DANH MỤC</h3>
+        <a class="category-link @(selectedCategoryId == null ? "active" : "")"
+           href="@Url.RouteUrl("product")">Tất cả sản phẩm</a>
+
+        @foreach (var category in categories)
+        {
+            <a class="category-link @(selectedCategoryId == category.Id ? "active" : "")"
+               href="@Url.RouteUrl("product-category", new { id = category.Id })">
+                @category.Name
+            </a>
+        }
+    </aside>
+
+    <main class="product-area">
+        <h2>Danh sách sản phẩm</h2>
+
+        @if (!products.Any())
+        {
+            <div class="empty">Không có sản phẩm trong danh mục này.</div>
+        }
+        else
+        {
+            <div class="product-grid">
+                @foreach (var product in products)
+                {
+                    <article class="product-card">
+                        <img src="@product.Image" alt="@product.Name" />
+                        <div class="product-info">
+                            <h3>@product.Name</h3>
+                            <div class="price">
+                                <span class="old-price">@product.Price.ToString("N0") đ</span>
+                                <strong>@product.SalePrice.ToString("N0") đ</strong>
+                            </div>
+                            <p class="status @(product.Status ? "available" : "unavailable")">
+                                @(product.Status ? "Còn hàng" : "Hết hàng")
+                            </p>
+                            <a class="btn btn-detail"
+                               href="@Url.RouteUrl("product-details", new { id = product.Id })">
+                                Chi tiết
+                            </a>
+                        </div>
+                    </article>
+                }
+            </div>
+        }
+    </main>
+</div>

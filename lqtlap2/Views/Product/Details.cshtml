@@ -1,0 +1,29 @@
+@model Lab02_Controller.Models.Product
+@{
+    ViewData["Title"] = "Chi tiết sản phẩm";
+    var category = ViewBag.Category as Lab02_Controller.Models.Category;
+}
+
+<div class="detail-card">
+    <div class="detail-image">
+        <img src="@Model.Image" alt="@Model.Name" />
+    </div>
+
+    <div class="detail-content">
+        <h1>Chi tiết sản phẩm</h1>
+        <h2>@Model.Name</h2>
+
+        <p><b>Danh mục:</b> @(category?.Name ?? "Không xác định")</p>
+        <p>
+            <b>Giá gốc:</b>
+            <span class="old-price">@Model.Price.ToString("N0") đ</span>
+        </p>
+        <p><b>Giá mới:</b> <strong class="sale-price">@Model.SalePrice.ToString("N0") đ</strong></p>
+        <p><b>Mô tả:</b> @Model.Description</p>
+        <p><b>Trạng thái:</b> @(Model.Status ? "Còn hàng" : "Hết hàng")</p>
+        <p><b>Ngày đăng:</b> @Model.CreatedAt.ToString("dd/MM/yyyy HH:mm:ss")</p>
+
+        <a class="btn btn-primary"
+           href="@Url.RouteUrl("product")">Quay lại danh sách</a>
+    </div>
+</div>

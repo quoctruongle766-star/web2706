@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Lab02_Controller</title>
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+<header>
+    <nav class="navbar">
+        <div class="container nav-inner">
+            <a class="brand" href="/">Lab02_Controller</a>
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <a href="/product">Product</a>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<main class="container">
+    @RenderBody()
+</main>
+
+<footer>
+    <div class="container">ASP.NET Core MVC - Lab 02</div>
+</footer>
+</body>
+</html>
