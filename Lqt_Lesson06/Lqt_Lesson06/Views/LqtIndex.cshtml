@@ -1,0 +1,60 @@
+﻿@model IEnumerable<LqtLesson06Models.Models.LqtMember>
+
+@{
+    ViewData["Title"] = "LqtIndex";
+}
+
+<h1>LqtIndex</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table table-brodered">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.LqtMemberId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LqtMemberUserName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LqtMemberPassword)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LqtMemberEmail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LqtMemberFullName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LqtMemberId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LqtMemberUserName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LqtMemberPassword)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LqtMemberEmail)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LqtMemberFullName)
+                </td>
+                <td>
+                    @Html.ActionLink("Sua", "LqtEdit", new {  id=item.LqtMemberId}) |
+                    @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

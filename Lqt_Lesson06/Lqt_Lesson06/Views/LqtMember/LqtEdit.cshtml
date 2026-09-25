@@ -1,0 +1,49 @@
+@model LqtLesson06Models.Models.LqtMember
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>LqtMember</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="LqtMemberId" />
+            <div class="form-group">
+                <label asp-for="LqtMemberUserName" class="control-label"></label>
+                <input asp-for="LqtMemberUserName" class="form-control" />
+                <span asp-validation-for="LqtMemberUserName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LqtMemberPassword" class="control-label"></label>
+                <input asp-for="LqtMemberPassword" class="form-control" />
+                <span asp-validation-for="LqtMemberPassword" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LqtMemberEmail" class="control-label"></label>
+                <input asp-for="LqtMemberEmail" class="form-control" />
+                <span asp-validation-for="LqtMemberEmail" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LqtMemberFullName" class="control-label"></label>
+                <input asp-for="LqtMemberFullName" class="form-control" />
+                <span asp-validation-for="LqtMemberFullName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

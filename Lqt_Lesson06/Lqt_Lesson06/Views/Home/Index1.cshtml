@@ -1,0 +1,12 @@
+﻿@model LqtLesson06Models.Models.LqtMember
+@{
+    ViewData["Title"] = "Thông tin chi tiết thành viên";
+    // var lqtMember = Model as LqtLesson06Models.Models.LqtMember;
+}
+
+<h1>@ViewData["Title"]</h1>
+<p>Member Id: @Model.LqtMemberId</p>
+<p>UserName: @Model.LqtMemberUserName</p>
+<p>Password: @Model.LqtMemberPassword</p>
+<p>FullName: @Model.LqtMemberFullName</p>
+<p>Email: @Model.LqtMemberEmail</p>
