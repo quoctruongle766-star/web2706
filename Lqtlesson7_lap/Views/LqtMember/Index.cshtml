@@ -1,0 +1,38 @@
+@model IEnumerable<LqtMember>
+@{
+    ViewData["Title"] = "Danh sách thành viên";
+}
+<h1>Danh sách thành viên</h1>
+
+<p><a class="btn" asp-action="Create">Thêm thành viên</a></p>
+
+@if (!Model.Any())
+{
+    <p>Chưa có thành viên nào.</p>
+}
+else
+{
+<table>
+    <thead>
+        <tr>
+            <th>Tên đăng nhập</th>
+            <th>Họ và tên</th>
+            <th>Email</th>
+            <th>Điện thoại</th>
+            <th>Ngày sinh</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var lqtMember in Model)
+    {
+        <tr>
+            <td>@lqtMember.UserName</td>
+            <td>@lqtMember.FullName</td>
+            <td>@lqtMember.Email</td>
+            <td>@lqtMember.Phone</td>
+            <td>@lqtMember.Birthday.ToString("dd/MM/yyyy")</td>
+        </tr>
+    }
+    </tbody>
+</table>
+}

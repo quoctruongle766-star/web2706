@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Lqtlesson7_lap</title>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+<header>
+    <nav class="nav">
+        <a asp-controller="LqtHome" asp-action="Index">Lqtlesson7_lap</a>
+        <a asp-controller="LqtMember" asp-action="Index">Danh sách thành viên</a>
+        <a asp-controller="LqtMember" asp-action="Create">Data Annotation</a>
+        <a asp-controller="LqtMember" asp-action="ManualCreate">Manual Validation</a>
+    </nav>
+</header>
+<main class="container">
+    @RenderBody()
+</main>
+</body>
+</html>

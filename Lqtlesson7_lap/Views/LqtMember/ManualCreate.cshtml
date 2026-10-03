@@ -1,0 +1,52 @@
+@model LqtMember
+@{
+    ViewData["Title"] = "Manual Validation";
+}
+<h1>Manual Validation</h1>
+
+<form asp-action="ManualCreate" method="post">
+    <div asp-validation-summary="ModelOnly" class="validation"></div>
+
+    <div class="form-group">
+        <label asp-for="UserName">Tên đăng nhập</label>
+        <input asp-for="UserName" class="form-control" />
+        <span asp-validation-for="UserName" class="validation"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="FullName">Họ và tên</label>
+        <input asp-for="FullName" class="form-control" />
+        <span asp-validation-for="FullName" class="validation"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Password">Mật khẩu</label>
+        <input asp-for="Password" type="password" class="form-control" />
+        <span asp-validation-for="Password" class="validation"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="ConfirmPassword">Gõ lại mật khẩu</label>
+        <input asp-for="ConfirmPassword" type="password" class="form-control" />
+        <span asp-validation-for="ConfirmPassword" class="validation"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Email">Email</label>
+        <input asp-for="Email" class="form-control" />
+        <span asp-validation-for="Email" class="validation"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Phone">Điện thoại</label>
+        <input asp-for="Phone" class="form-control" />
+        <span asp-validation-for="Phone" class="validation"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Birthday">Ngày sinh</label>
+        <input asp-for="Birthday" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn">Lưu</button>
+</form>
