@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/LqtLayoutHome.css" asp-append-version="true" />
+</head>
+<body>
+    <div id="wrapper">
+       
+        <nav id="navbar">
+            <ul>
+                <li><a href="/Products/Index" class="active">Danh sách sản phẩm</a></li>
+                <li><a asp-action="Search" asp-controller="Products">Tìm kiếm sản phẩm</a></li>
+                <li><a asp-action="Hots" asp-controller="Products">Danh sách bán chạy</a></li>
+                <li><a href="/Products/About">Giới thiệu</a></li>
+            </ul>
+        </nav>
+
+        <div class="content">
+            @RenderBody()
+        </div>
+
+        <footer class="footer">
+            <p>Copyright &copy; 10/2026 - Quốc Trưởng</p>
+            <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </footer>
+    </div>
+    <script src="~/js/LqtLayoutHome.js" asp-append-version="true"></script>
+</body>
+</html>
