@@ -14,16 +14,16 @@ namespace Lqtlesson11Lap3.Controllers
             {
                 listStudents = new List<LqtStudent>()
                 {
-                    new LqtStudent() { Id = 101, Name = "Hải Nam", Branch = LqtBranch.IT,
+                    new LqtStudent() { Id = 101, Name = "Lê Quốc Trường", Branch = LqtBranch.IT,
                         Gender = LqtGender.Male, IsRegular = true,
-                        Address = "A1-2018", Email = "nam@gmail.com", DateOfBorth = new DateTime(2003, 1, 1), Score = 8.5 },
-                    new LqtStudent() { Id = 102, Name = "Minh Tú", Branch = LqtBranch.BE,
-                        Gender = LqtGender.Female, IsRegular = true,
-                        Address = "A1-2019", Email = "tu@gmail.com", DateOfBorth = new DateTime(2003, 5, 12), Score = 9.0 },
-                    new LqtStudent() { Id = 103, Name = "Hoàng Phong", Branch = LqtBranch.CE,
-                        Gender = LqtGender.Male, IsRegular = false,
-                        Address = "A1-2020", Email = "phong@gmail.com", DateOfBorth = new DateTime(2002, 10, 20), Score = 7.0 },
-                    new LqtStudent() { Id = 104, Name = "Xuân Mai", Branch = LqtBranch.EE,
+                        Address = "A1-2018", Email = "truong@gmail.com", DateOfBorth = new DateTime(2003, 1, 1), Score = 8.5 },
+                    new LqtStudent() { Id = 102, Name = "Nguyễn Hải Nam", Branch = LqtBranch.BE,
+                        Gender = LqtGender.Male, IsRegular = true,
+                        Address = "A1-2019", Email = "nam@gmail.com", DateOfBorth = new DateTime(2003, 5, 12), Score = 9.0 },
+                    new LqtStudent() { Id = 103, Name = "Trần Minh Tú", Branch = LqtBranch.CE,
+                        Gender = LqtGender.Female, IsRegular = false,
+                        Address = "A1-2020", Email = "tu@gmail.com", DateOfBorth = new DateTime(2002, 10, 20), Score = 7.0 },
+                    new LqtStudent() { Id = 104, Name = "Phạm Xuân Mai", Branch = LqtBranch.EE,
                         Gender = LqtGender.Female, IsRegular = false,
                         Address = "A1-2021", Email = "mai@gmail.com", DateOfBorth = new DateTime(2004, 7, 8), Score = 8.0 }
                 };

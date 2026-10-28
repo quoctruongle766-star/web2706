@@ -32,8 +32,10 @@ namespace Lqtlesson11lap4.Data
 
                 var learners = new LqtLearner[]
                 {
-                    new LqtLearner { FirstMidName = "Carson", LastName = "Alexander", EnrollmentDate = DateTime.Parse("2005-09-01"), MajorID = 1 },
-                    new LqtLearner { FirstMidName = "Meredith", LastName = "Alonso", EnrollmentDate = DateTime.Parse("2002-09-01"), MajorID = 2 }
+                    new LqtLearner { FirstMidName = "Trường", LastName = "Lê Quốc", EnrollmentDate = DateTime.Parse("2005-09-01"), MajorID = 1 },
+                    new LqtLearner { FirstMidName = "Nam", LastName = "Nguyễn Hải", EnrollmentDate = DateTime.Parse("2002-09-01"), MajorID = 2 },
+                    new LqtLearner { FirstMidName = "Tú", LastName = "Trần Minh", EnrollmentDate = DateTime.Parse("2003-09-01"), MajorID = 1 },
+                    new LqtLearner { FirstMidName = "Mai", LastName = "Phạm Xuân", EnrollmentDate = DateTime.Parse("2004-09-01"), MajorID = 3 }
                 };
 
                 foreach (var l in learners)
