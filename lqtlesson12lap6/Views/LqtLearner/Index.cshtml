@@ -1,0 +1,26 @@
+@model IEnumerable<LqtLearner>
+@{
+    ViewData["Title"] = "Learner List";
+    Layout = "~/Views/Shared/MyLayout.cshtml";
+}
+<div class="ms-2 mx-2">
+    <h1>Learner List</h1>
+    @await Component.InvokeAsync("LqtMajor")
+
+    <form id="lqt-search" asp-action="Index" method="get" class="mb-3">
+        <input type="hidden" name="mid" value="@ViewBag.LqtMid" />
+        <label for="lqt-keyword" class="visually-hidden">Tìm theo tên</label>
+        <div class="input-group" style="max-width: 360px">
+            <input id="lqt-keyword" name="keyword" value="@ViewBag.LqtKeyword" class="form-control" placeholder="Search learner" />
+            <button class="btn btn-primary" type="submit">Tìm kiếm</button>
+        </div>
+    </form>
+
+    <div id="lqt-content" data-lqt-url="@Url.Action("LearnerFilter", "LqtLearner")">
+        <partial name="LqtLearnerTable" model="Model" />
+    </div>
+    <a asp-action="Create" class="btn btn-primary">Create New Student</a>
+</div>
+@section Scripts {
+    <script src="~/js/lqt-learners.js" asp-append-version="true"></script>
+}
