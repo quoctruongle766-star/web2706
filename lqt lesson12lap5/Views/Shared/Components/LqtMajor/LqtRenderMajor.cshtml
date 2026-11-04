@@ -1,0 +1,11 @@
+@model IEnumerable<LqtMajor>
+<ul id="lqt-majors" class="nav mb-3">
+    @foreach (var lqtMajor in Model)
+    {
+        <li class="nav-item" id="lqt-major-@lqtMajor.MajorID">
+            <a asp-controller="LqtLearner" asp-action="Index" asp-route-mid="@lqtMajor.MajorID"
+               asp-route-keyword="@ViewBag.LqtKeyword" data-lqt-mid="@lqtMajor.MajorID"
+               class="nav-link">@lqtMajor.MajorName</a>
+        </li>
+    }
+</ul>

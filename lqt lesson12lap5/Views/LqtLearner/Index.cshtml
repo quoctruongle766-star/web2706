@@ -1,0 +1,17 @@
+@model IEnumerable<LqtLearner>
+@{
+    ViewData["Title"] = "Learner List";
+    Layout = "~/Views/Shared/MyLayout.cshtml";
+}
+<div class="ms-2 mx-2">
+    <h1>Learner List</h1>
+    @await Component.InvokeAsync("LqtMajor")
+
+    <div id="lqt-content" data-lqt-url="@Url.Action("LearnerByMajorID", "LqtLearner")">
+        <partial name="LqtLearnerTable" model="Model" />
+    </div>
+    <a asp-action="Create" class="btn btn-primary">Create New Student</a>
+</div>
+@section Scripts {
+    <script src="~/js/lqt-learners.js" asp-append-version="true"></script>
+}
