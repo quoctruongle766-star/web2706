@@ -1,4 +1,3 @@
-// BookHub - hiệu ứng giao diện cơ bản (nút "lên đầu trang")
 $(function () {
     $(window).on('scroll', function () {
         $('.to-top').toggle($(this).scrollTop() > 200);
