@@ -1,0 +1,13 @@
+@model IEnumerable<Sach>
+
+<div class="banner">
+    <img src="~/images/banner.jpg" alt="Banner" />
+</div>
+
+<div class="section-head">
+    <a class="book-create-link" asp-controller="Home" asp-action="Create">Thêm sách</a>
+</div>
+
+<div id="danh-sach-sach">
+    <partial name="LeQuocTruong_MainContent" model="Model" />
+</div>

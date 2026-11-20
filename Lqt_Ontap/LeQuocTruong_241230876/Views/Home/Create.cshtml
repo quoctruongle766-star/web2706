@@ -1,0 +1,32 @@
+@model Sach
+
+<h2>Thêm sách mới</h2>
+
+<form class="book-create-form" asp-controller="Home" asp-action="Create" method="post" novalidate>
+    <div>
+        <label asp-for="MaTL">Thể loại</label>
+        <select asp-for="MaTL" asp-items="ViewBag.DanhSachTheLoai">
+            <option value="">-- Chọn thể loại --</option>
+        </select>
+        <span asp-validation-for="MaTL"></span>
+    </div>
+    <div>
+        <label asp-for="TenSach">Tên sách</label>
+        <input asp-for="TenSach" />
+        <span asp-validation-for="TenSach"></span>
+    </div>
+    <div>
+        <label asp-for="Gia">Giá (nghìn đồng)</label>
+        <input asp-for="Gia" type="number" step="1" />
+        <span asp-validation-for="Gia"></span>
+    </div>
+    <div>
+        <label asp-for="Anh">Tên tệp ảnh</label>
+        <input asp-for="Anh" placeholder="Img_1.jpg" />
+        <span asp-validation-for="Anh"></span>
+    </div>
+    <div class="book-create-actions">
+        <button class="btn-buy" type="submit">Thêm sách</button>
+        <a asp-controller="Home" asp-action="Index">Về trang chủ</a>
+    </div>
+</form>
