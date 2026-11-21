@@ -1,0 +1,31 @@
+﻿@model IEnumerable<TaiSan>
+
+<div class="section-head">
+    <h3>@ViewData["TieuDe"]</h3>
+</div>
+
+@if (!Model.Any())
+{
+    <p>Chưa có tài sản trong danh sách.</p>
+}
+else
+{
+    <div class="grid">
+        @foreach (var taiSan in Model)
+        {
+            <div class="asset-card">
+                @if (!string.IsNullOrWhiteSpace(taiSan.Anh))
+                {
+                    <img src="@Url.Content("~/images/" + taiSan.Anh)"
+                         alt="@taiSan.TenTS" />
+                }
+                <h2>@taiSan.TenTS</h2>
+                <div class="asset-foot">
+                    <span class="price">
+                        @(taiSan.NguyenGia is decimal gia ? $"{gia:0} tr" : "Chưa định giá")
+                    </span>
+                </div>
+            </div>
+        }
+    </div>
+}

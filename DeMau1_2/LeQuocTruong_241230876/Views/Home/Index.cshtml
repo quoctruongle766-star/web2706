@@ -1,0 +1,40 @@
+@model IEnumerable<TaiSan>
+
+<div id="ket-qua-tai-san">
+    <partial name="LeQuocTruong_DanhSachTaiSan" model="Model" />
+</div>
+<p id="thong-bao-loc" role="status"></p>
+
+@section Scripts {
+    <script>
+        const ketQua = document.getElementById("ket-qua-tai-san");
+        const thongBaoLoc = document.getElementById("thong-bao-loc");
+        let yeuCauHienTai;
+
+        for (const link of document.querySelectorAll("a[data-loc-loai]")) {
+            link.addEventListener("click", async event => {
+                event.preventDefault();
+                yeuCauHienTai?.abort();
+                const yeuCau = new AbortController();
+                yeuCauHienTai = yeuCau;
+                thongBaoLoc.textContent = "";
+
+                try {
+                    const phanHoi = await fetch(link.href, { signal: yeuCau.signal });
+                    if (!phanHoi.ok) throw new Error("Lọc tài sản thất bại.");
+
+                    const html = await phanHoi.text();
+                    if (yeuCau.signal.aborted) return;
+
+                    ketQua.innerHTML = html;
+                    document.querySelector(".menu li.active")?.classList.remove("active");
+                    link.closest("li").classList.add("active");
+                } catch {
+                    if (!yeuCau.signal.aborted) {
+                        thongBaoLoc.textContent = "Không tải được tài sản. Hãy bấm lại.";
+                    }
+                }
+            });
+        }
+    </script>
+}
