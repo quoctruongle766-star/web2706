@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lê Quốc Trưởng</title>
+    <link rel="stylesheet" href="~/css/style.css" />
+</head>
+<body>
+    <div class="wrap">
+        <partial name="LeQuocTruong_Header" />
+        @await Html.PartialAsync("LeQuocTruong_MainContent", RenderBody())
+    </div>
+
+    <partial name="LeQuocTruong_Footer" />
+    @await RenderSectionAsync("Scripts", required: false)
+    <script src='~/js/loc-hang.js'></script>
+</body>
+</html>

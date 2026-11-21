@@ -1,0 +1,23 @@
+@model IEnumerable<HangHoa>
+
+@if (!Model.Any())
+{
+    <p>Chưa có sản phẩm nào trong danh sách.</p>
+}
+else
+{
+    <div class="section group">
+        @foreach (var hang in Model)
+        {
+            <div class="grid_1_of_4 images_1_of_4">
+                @if (!string.IsNullOrWhiteSpace(hang.Anh))
+                {
+                    <img src="@Url.Content("~/images/" + hang.Anh)" alt="@hang.TenHang" />
+                }
+                <h2>@hang.TenHang</h2>
+                <p>Giá: @hang.Gia?.ToString("0")</p>
+            </div>
+        }
+    </div>
+}
+

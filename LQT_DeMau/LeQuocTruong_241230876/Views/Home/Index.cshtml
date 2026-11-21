@@ -1,0 +1,14 @@
+@model IEnumerable<HangHoa>
+@{
+    ViewData["Title"] = "Lê Quốc Trưởng";
+}
+
+<div class="content_top">
+    <div class="heading"><h3>Lê Quốc Trưởng</h3></div>
+    <div class="clear"></div>
+</div>
+<div id="danh-sach-hang">
+    <partial name="HangHoaGrid" model="Model" />
+</div>
+<p id="loi-loc-hang" role="status"></p>
+
